@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>auto implementation type extention</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for F# extension method on an existing type</Description>
+      <Author>Judith Wang</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>param1</ID>
+          <ToolTip>class name</ToolTip>
+          <Default>MyClassName</Default>
+        </Literal>
+        <Literal>
+          <ID>param2</ID>
+          <ToolTip>member name</ToolTip>
+          <Default>MyMemName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[type $param1$ with
+   member this.$param2$ =
+      $selected$$end$
+end]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

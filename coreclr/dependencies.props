@@ -1,0 +1,113 @@
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <!-- Central place to set the versions of all nuget packages produced in the repo -->
+    <PackageVersion Condition="'$(PackageVersion)' == ''">2.1.0</PackageVersion>
+    
+    <!-- Set the boolean below to true to generate packages with stabilized versions -->
+    <StabilizePackageVersion Condition="'$(StabilizePackageVersion)' == ''">false</StabilizePackageVersion>
+    <StableVersion Condition="'$(StabilizePackageVersion)' == 'true' and '$(StableVersion)' == ''">$(PackageVersion)</StableVersion>
+
+    <PreReleaseLabel>preview1</PreReleaseLabel>
+  </PropertyGroup>
+  
+  <!-- Source of truth for dependency tooling: the commit hash of the dotnet/versions master branch as of the last auto-upgrade. -->
+  <PropertyGroup>
+    <CoreFxCurrentRef>b863ff9ff68746068091a38f9d952de848b14d32</CoreFxCurrentRef>
+    <CoreClrCurrentRef>b863ff9ff68746068091a38f9d952de848b14d32</CoreClrCurrentRef>
+  </PropertyGroup>
+
+  <!-- Auto-upgraded properties for each build info dependency. -->
+  <PropertyGroup>
+    <CoreFxPackageVersion>4.5.0-preview1-25421-02</CoreFxPackageVersion>
+    <PlatformPackageVersion>2.1.0-preview1-25324-02</PlatformPackageVersion>
+  </PropertyGroup>
+
+  <!-- Full package version strings that are used in other parts of the build. -->
+  <PropertyGroup>
+    <CoreClrPackageVersion>2.1.0-preview1-25421-01</CoreClrPackageVersion>
+    <XunitPackageVersion>2.2.0-beta2-build3300</XunitPackageVersion>
+    <XUnitConsoleNetCoreVersion>1.0.2-prerelease-00177</XUnitConsoleNetCoreVersion>
+    <XUnitPerformanceApiVersion>1.0.0-beta-build0007</XUnitPerformanceApiVersion>
+    <MicrosoftDiagnosticsTracingLibraryVersion>1.0.3-alpha-experimental</MicrosoftDiagnosticsTracingLibraryVersion>
+  </PropertyGroup>
+
+  <!-- Package dependency verification/auto-upgrade configuration. -->
+  <PropertyGroup>
+    <BaseDotNetBuildInfo>build-info/dotnet/</BaseDotNetBuildInfo>
+    <DependencyBranch>master</DependencyBranch>
+    <CurrentRefXmlPath>$(MSBuildThisFileFullPath)</CurrentRefXmlPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <RemoteDependencyBuildInfo Include="CoreFx">
+      <BuildInfoPath>$(BaseDotNetBuildInfo)corefx/$(DependencyBranch)</BuildInfoPath>
+      <CurrentRef>$(CoreFxCurrentRef)</CurrentRef>
+    </RemoteDependencyBuildInfo>
+    <RemoteDependencyBuildInfo Include="CoreClr">
+      <BuildInfoPath>$(BaseDotNetBuildInfo)coreclr/$(DependencyBranch)</BuildInfoPath>
+      <CurrentRef>$(CoreClrCurrentRef)</CurrentRef>
+    </RemoteDependencyBuildInfo>
+
+    <DependencyBuildInfo Include="@(RemoteDependencyBuildInfo)">
+      <RawVersionsBaseUrl>https://raw.githubusercontent.com/dotnet/versions</RawVersionsBaseUrl>
+    </DependencyBuildInfo>
+
+    <XmlUpdateStep Include="CoreFx">
+      <Path>$(MSBuildThisFileFullPath)</Path>
+      <ElementName>CoreFxPackageVersion</ElementName>
+      <PackageId>Microsoft.Private.CoreFx.NETCoreApp</PackageId>
+    </XmlUpdateStep>
+    <XmlUpdateStep Include="CoreFx">
+      <Path>$(MSBuildThisFileFullPath)</Path>
+      <ElementName>PlatformPackageVersion</ElementName>
+      <PackageId>Microsoft.NETCore.Platforms</PackageId>
+    </XmlUpdateStep>
+    <XmlUpdateStep Include="CoreClr">
+      <Path>$(MSBuildThisFileFullPath)</Path>
+      <ElementName>CoreClrPackageVersion</ElementName>
+      <PackageId>Microsoft.NETCore.Runtime.CoreCLR</PackageId>
+    </XmlUpdateStep>
+  </ItemGroup>
+
+  <!-- Set up dependencies on packages that aren't found in a BuildInfo. -->
+  <ItemGroup>
+    <XUnitDependency Include="xunit"/>
+    <XUnitDependency Include="xunit.assert"/>
+    <XUnitDependency Include="xunit.core"/>
+    <XUnitDependency Include="xunit.runner.console"/>
+    <XUnitDependency Include="xunit.runner.msbuild"/>
+    <XUnitDependency Include="xunit.runner.utility"/>
+    <StaticDependency Include="@(XUnitDependency)">
+      <Version>$(XunitPackageVersion)</Version>
+    </StaticDependency>
+
+    <XunitPerformanceDependency Include="Microsoft.DotNet.xunit.performance" />
+    <XunitPerformanceDependency Include="Microsoft.DotNet.xunit.performance.analysis" />
+    <XunitPerformanceDependency Include="Microsoft.DotNet.xunit.performance.analysis.cli" />
+    <XunitPerformanceDependency Include="Microsoft.DotNet.xunit.performance.metrics" />
+    <XunitPerformanceDependency Include="Microsoft.DotNet.xunit.performance.run.core" />
+    <XunitPerformanceDependency Include="Microsoft.DotNet.xunit.performance.runner.cli" />
+    <XunitPerformanceDependency Include="Microsoft.DotNet.xunit.performance.runner.Windows" />
+    <StaticDependency Include="@(XunitPerformanceDependency)">
+      <Version>1.0.0-alpha-build0040</Version>
+    </StaticDependency>
+
+    <XUnitPerformanceApiDependency Include="xunit.performance.api" />
+    <XUnitPerformanceApiDependency Include="xunit.performance.core" />
+    <XUnitPerformanceApiDependency Include="xunit.performance.execution" />
+    <XUnitPerformanceApiDependency Include="xunit.performance.metrics" />
+    <StaticDependency Include="@(XUnitPerformanceApiDependency)">
+      <Version>$(XUnitPerformanceApiVersion)</Version>
+    </StaticDependency>
+
+    <StaticDependency Include="xunit.console.netcore">
+      <Version>$(XUnitConsoleNetCoreVersion)</Version>
+    </StaticDependency>
+
+    <DependencyBuildInfo Include="@(StaticDependency)">
+      <PackageId>%(Identity)</PackageId>
+      <UpdateStableVersions>true</UpdateStableVersions>
+    </DependencyBuildInfo>
+  </ItemGroup>
+</Project>

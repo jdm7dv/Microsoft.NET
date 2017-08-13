@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>propfull</Title>
+			<Shortcut>propfull</Shortcut>
+			<Description>Code snippet for property and backing field</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+                <Literal>
+                    <ID>access</ID>
+                    <ToolTip>Access modifier</ToolTip>
+                    <Default>public</Default>
+                </Literal>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Property type</ToolTip>
+					<Default>int</Default>
+				</Literal>
+				<Literal>
+					<ID>property</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+				<Literal>
+					<ID>field</ID>
+					<ToolTip>The variable backing this property</ToolTip>
+					<Default>field</Default>
+				</Literal>
+                <Literal>
+                    <ID>fieldSummary</ID>
+                    <ToolTip>Backing field summary</ToolTip>
+                    <Default>summary</Default>
+                </Literal>
+                <Literal>
+                    <ID>summary</ID>
+                    <ToolTip>Summary</ToolTip>
+                    <Default>summary</Default>
+                </Literal>
+			</Declarations>
+			<Code Language="csharp">
+                <![CDATA[/// <summary>
+/// The $fieldSummary$.
+/// </summary>
+private $type$ $field$;
+
+/// <summary>
+/// Gets or sets the $summary$.
+/// </summary>
+/// <value>The $summary$.</value>
+$access$ $type$ $property$
+{
+	get 
+    { 
+        return this.$field$;
+    }
+    
+	set 
+    { 
+        this.$field$ = value;
+    }
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

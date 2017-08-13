@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>auto implementation delegate</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for auto implementation delegate</Description>
+      <Author>Judith Wang</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>param1</ID>
+          <ToolTip>delegate name</ToolTip>
+          <Default>DelegateName</Default>
+        </Literal>
+        <Literal>
+          <ID>param2</ID>
+          <ToolTip>argument type or types</ToolTip>
+          <Default>MyArgTypes</Default>
+        </Literal>
+        <Literal>
+          <ID>param3</ID>
+          <ToolTip>return type</ToolTip>
+          <Default>MyRetType</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[type $param1$ = delegate of $param2$ -> $param3$$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

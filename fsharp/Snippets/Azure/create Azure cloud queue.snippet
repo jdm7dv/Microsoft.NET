@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>create Azure cloud queue</Title>
+      <Shortcut></Shortcut>
+      <Description>create Azure cloud queue</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>conStr</ID>
+          <ToolTip>connection string name</ToolTip>
+          <Default>MyConnectionString</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>queue</ID>
+          <ToolTip>queue name</ToolTip>
+          <Default>myqueue</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[let connectionStringName = "$conStr$"
+let storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(connectionStringName))
+let queueClient = storageAccount.CreateCloudQueueClient()
+let queue = queueClient.GetQueueReference("$queue$")
+ignore <| queue.CreateIfNotExist()$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>get proces output</Title>
+      <Shortcut></Shortcut>
+      <Description>get process output</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Object Editable="true">
+          <ID>variableName</ID>
+          <ToolTip>variableName</ToolTip>
+          <Default>variableName</Default>
+          <Function></Function>
+        </Object>
+        <Literal Editable="true">
+          <ID>exeFileName</ID>
+          <ToolTip>exeFileName</ToolTip>
+          <Default>ConsoleApp.exe</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let $variableName$ = new System.Diagnostics.Process()
+$variableName$.StartInfo.UseShellExecute <- false
+$variableName$.StartInfo.RedirectStandardOutput <- true
+$variableName$.StartInfo.FileName <- "$exeFileName$"
+$variableName$.Start() |> ignore
+$variableName$.WaitForExit()
+
+let output = $variableName$.StandardOutput.ReadToEnd()]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

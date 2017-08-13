@@ -1,0 +1,49 @@
+﻿<html>
+<head><title>Gestalt README</title></head>
+<body>
+<h1>Gestalt README</h1>
+<p>Gestalt is a cross-browser, cross-platform library built on the Dynamic Language Runtime that you can 
+use in your web pages to enable Ruby, Python, and XAML directly in your HTML markup.
+</p>
+
+<h2>
+What's Included in this ZIP package?
+</h2>
+<code><pre>
++- <a href="dlr">dlr/</a>
+| +- DLR.js  - reference this script from your web pages to enable gestalt
+| +- DLR.xap    - used if you are mixing ruby and python in the same page
+| +- IronRuby.slvx  - used if you have ruby on the page
+| +- IronPython.slvx  - used if you have python on the page
+| +- Microsoft.Scripting.slvx  - used by both Ruby and Python
+| +- gestaltmedia.js  - enables Gestalt to play back HTML5 video and audio tag content
++- <a href="samples">samples/</a>   - place to unzip individual samples downloaded from the samples page
+  +- <a href="samples/getting.started">getting.started/</a>    - very basic samples that you can view and modify to get started
+</pre></code>
+
+<h2>
+Hosting the files
+</h2>
+<p>
+To launch any of the samples, you will need to place the "DLR" and "Samples" folder on the root of a web server and load the html pages in your
+favorite web browser.  You can place the DLR and Samples directory in different directories, but you may need to modify path information. 
+When exposing the DLR folder through a local Apache or IIS instance. You may need to configure MIME-types for .slvx, .py, and .rb files.
+
+<pre>
+- For .slvx files set the MIME-type to: application/octet-stream
+- For .rb and py files set the MIME-type to: text/plain
+</pre>
+
+</p>
+
+<h2>
+Downloading additional samples
+</h2>
+<p>
+When you download individual samples and widgets from <a href="http://visitmix.com/labs/gestalt/samples/">the samples page</a>, just unzip them directly into the <a href="samples">samples folder</a>.  
+so that each sample will be in a new subfolder beneath the samples folder.
+</p>
+
+
+</body>
+</html>

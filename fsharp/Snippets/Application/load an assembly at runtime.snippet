@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>load an assembly at runtime</Title>
+      <Shortcut></Shortcut>
+      <Description>load an assembly at runtime</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>var</ID>
+          <ToolTip>loaded assembly</ToolTip>
+          <Default>loadedAssembly</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>fn</ID>
+          <ToolTip>dll file full path</ToolTip>
+          <Default>C:\Folder\AssemblyName.dll</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let $var$ = System.Reflection.Assembly.LoadFile(@"C:\Folder\AssemblyName.dll");]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>auto implementation property2</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for property with getter and setter</Description>
+      <Author>Andrew Xiao</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>param1</ID>
+          <ToolTip>variable name</ToolTip>
+          <Default>MyVariable</Default>
+        </Literal>
+        <Literal>
+          <ID>param2</ID>
+          <ToolTip>default value</ToolTip>
+          <Default>0</Default>
+        </Literal>
+        <Literal>
+          <ID>param3</ID>
+          <ToolTip>property name</ToolTip>
+          <Default>MyProperty</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let mutable $param1$ = $param2$
+member this.$param3$ with get() = $param1$ and set(v) = $param1$ <- v $end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

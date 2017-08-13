@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>async</Title>
+      <Description>Code snippet for async</Description>
+      <Author>Zack Zhou</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>param1</ID>
+          <ToolTip>async function's name</ToolTip>
+          <Default>MyAsyncFun</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp">
+        <![CDATA[let $param1$ ( $end$ ) =
+    async {
+        
+    } |> Async.Start]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

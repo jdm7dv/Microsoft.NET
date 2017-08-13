@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>thread</Title>
+			<Shortcut>thread</Shortcut>
+			<Description>Code snippet for creating and starting a thread using a lambda expression.</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+                    <ID>SystemThreadingThread</ID>
+					<Function>SimpleTypeName(global::System.Threading.Thread)</Function>
+				</Literal>
+                <Literal>
+                    <ID>thread</ID>
+                    <Default>thread</Default>
+                    <ToolTip>Thread instance</ToolTip>
+                </Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[$SystemThreadingThread$ $thread$ = new $SystemThreadingThread$(() => {	        
+		$selected$ $end$
+	});
+    
+    $thread$.Start();]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>check ClickOne info</Title>
+      <Shortcut></Shortcut>
+      <Description>check ClickOne info</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>currentDeployment</ID>
+          <ToolTip>currentDeployment</ToolTip>
+          <Default>currentDeployment</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <References>
+        <Reference>
+          <Assembly>System.Deployment.dll</Assembly>
+        </Reference>
+      </References>
+      <Code Language="fsharp"><![CDATA[let $currentDeployment$ = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
+if System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed then
+    let appFullName = $currentDeployment$.UpdatedApplicationFullName;
+    let currentVersion = $currentDeployment$.CurrentVersion.ToString();
+    let updateLocation = $currentDeployment$.UpdateLocation.ToString();
+    let lastUpdate = $currentDeployment$.TimeOfLastUpdateCheck.ToString();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

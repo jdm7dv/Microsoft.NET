@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>indexer</Title>
+			<Shortcut>indexer</Shortcut>
+			<Description>Code snippet for indexer</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>access</ID>
+					<ToolTip>Access modifier</ToolTip>
+					<Default>public</Default>
+				</Literal>
+                <Literal>
+                    <ID>fulltype</ID>
+                    <ToolTip>Fully qualified type to return from indexer</ToolTip>
+                    <Default>System.Object</Default>
+                </Literal>
+                <Literal>
+					<ID>type</ID>
+					<ToolTip>Type to return from indexer</ToolTip>
+					<Default>object</Default>
+				</Literal>
+				<Literal>
+					<ID>indextype</ID>
+					<ToolTip>Type used to specify index</ToolTip>
+					<Default>int</Default>
+				</Literal>
+                <Literal Editable="false">
+                    <ID>SystemNotImplementedException</ID>
+                    <Function>SimpleTypeName(global::System.NotImplementedException)</Function>
+                </Literal>
+			</Declarations>
+			<Code Language="csharp">
+        <![CDATA[/// <summary>
+    /// Gets or sets the <see cref="T:$fulltype$"/> at the specified index.
+    /// </summary>
+    /// <param name="index">The index of the element to get or set.</param>
+    /// <value>The <see cref="T:$fulltype$"/> at the specified index.</value>
+    $access$ $type$ this[$indextype$ index]
+	{
+		get 
+        {
+            // TODO: return the specified index here
+            throw new $SystemNotImplementedException$();$end$
+        }
+        
+		set 
+        { 
+            // TODO: set the specified index to value here
+            throw new $SystemNotImplementedException$();
+        }
+	}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

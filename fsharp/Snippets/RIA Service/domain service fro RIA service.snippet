@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>domain service fro RIA service</Title>
+      <Shortcut></Shortcut>
+      <Description>domain service fro RIA service</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>CustomerDomainService</ID>
+          <ToolTip>domain service class</ToolTip>
+          <Default>CustomerDomainService</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>type</ID>
+          <ToolTip>type</ToolTip>
+          <Default>CustomerRecord</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>functionName</ID>
+          <ToolTip>function name</ToolTip>
+          <Default>Data</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <References>
+        <Reference>
+          <Assembly>System.ComponentModel.DataAnnotations.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.ServiceModel.DomainServices.Hosting.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.ServiceModel.DomainServices.Server.dll</Assembly>
+        </Reference>
+      </References>
+      <Code Language="fsharp" Kind=""><![CDATA[open System;
+open System.Collections.Generic;
+open System.ComponentModel;
+open System.ComponentModel.DataAnnotations;
+open System.Linq;
+open System.ServiceModel.DomainServices.Hosting;
+open System.ServiceModel.DomainServices.Server;
+
+type $CustomerDomainService$() = class
+    inherit DomainService()
+    let records = []
+
+    [<Query(IsDefault=true)>]
+    member this.Get$functionName$() : IQueryable<$type$> = 
+        records.AsQueryable()
+
+    member this.Update$functionName$(d:$type$) = ()
+    member this.Delete$functionName$(d:$type$) = ()
+end]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

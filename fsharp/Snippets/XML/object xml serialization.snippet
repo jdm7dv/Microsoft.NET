@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>object xml serialization</Title>
+      <Shortcut></Shortcut>
+      <Description>object xml serialization</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>obj</ID>
+          <ToolTip>the object to serialize</ToolTip>
+          <Default>TheClass</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>fn</ID>
+          <ToolTip>file to write to</ToolTip>
+          <Default>SerializationData.xml</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>dataToWrite</ID>
+          <ToolTip>data to write</ToolTip>
+          <Default>dataToWrite</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <References>
+        <Reference>
+          <Assembly>System.Xml.dll</Assembly>
+        </Reference>
+      </References>
+      <Code Language="fsharp"><![CDATA[let writer = System.Xml.Serialization.XmlSerializer(typeof<$obj$>);
+use file = new System.IO.StreamWriter("$fn$")
+writer.Serialize(file, $dataToWrite$);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

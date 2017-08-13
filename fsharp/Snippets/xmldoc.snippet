@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>auto implementation XML document</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for auto implementation XML document</Description>
+      <Author>Judith Wang</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>param1</ID>
+          <ToolTip>summary</ToolTip>
+          <Default>Summary</Default>
+        </Literal>
+        <Literal>
+          <ID>param2</ID>
+          <ToolTip>parameter name</ToolTip>
+          <Default>ParamName</Default>
+        </Literal>
+        <Literal>
+          <ID>param3</ID>
+          <ToolTip>parameter description</ToolTip>
+          <Default>ParamVal</Default>
+        </Literal>
+        <Literal>
+          <ID>param4</ID>
+          <ToolTip>return value</ToolTip>
+          <Default>RetVal</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[/// <summary> $param1$ </summary>
+/// <param name="$param2$"> $param3$ </param>
+/// <returns> $param4$ </returns>$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>generate random data</Title>
+      <Shortcut></Shortcut>
+      <Description>generate random data</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>dataLength</ID>
+          <ToolTip>data length</ToolTip>
+          <Default>8</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let randomNumGen = System.Security.Cryptography.RNGCryptoServiceProvider.Create()
+let randomBytes = Array.zeroCreate($dataLength$)
+randomNumGen.GetBytes(randomBytes)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

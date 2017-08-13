@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ping another computer</Title>
+      <Shortcut></Shortcut>
+      <Description>ping another computer</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>address</ID>
+          <ToolTip>target machine address or IP</ToolTip>
+          <Default>www.contoso.com</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let pingObject = new System.Net.NetworkInformation.Ping()
+let pingReplyObject = pingObject.Send("$address$")
+let status = pingReplyObject.Status]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

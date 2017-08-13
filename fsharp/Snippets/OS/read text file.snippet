@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>read text file</Title>
+      <Shortcut></Shortcut>
+      <Description>read text file</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>fn</ID>
+          <ToolTip>file name</ToolTip>
+          <Default>C:\Test.txt</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[use sr = new System.IO.StreamReader(@"$fn$")
+let fileContents = sr.ReadToEnd();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

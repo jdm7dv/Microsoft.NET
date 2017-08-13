@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>download file using HTTP</Title>
+      <Shortcut></Shortcut>
+      <Description>download file using HTTP</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>address</ID>
+          <ToolTip>source address</ToolTip>
+          <Default>http://www.URLtoDownloadFrom.net</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>target</ID>
+          <ToolTip>target file</ToolTip>
+          <Default>c:\filename.htm</Default>
+          <Function></Function>
+        </Literal>
+        <Object Editable="true">
+          <ID>var</ID>
+          <ToolTip>variable name</ToolTip>
+          <Default>client</Default>
+          <Function></Function>
+        </Object>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let $var$ = System.Net.WebClient()
+$var$.DownloadFile("$address$", @"$target$");]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

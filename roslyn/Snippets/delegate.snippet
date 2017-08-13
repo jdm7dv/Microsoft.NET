@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>delegate</Title>
+			<Shortcut>delegate</Shortcut>
+			<Description>Code snippet for delegate</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+                <Literal>
+                    <ID>access</ID>
+                    <ToolTip>Access modifier</ToolTip>
+                    <Default>public</Default>
+                </Literal>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Return type</ToolTip>
+                    <Default>int</Default>
+                </Literal>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>Delegate name</ToolTip>
+                    <Default>DelegateName</Default>                    
+                </Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[/// <summary>
+    /// $end$
+    /// </summary>
+    /// <returns></returns>
+    $access$ delegate $type$ $name$();]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

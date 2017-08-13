@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>create blob and set permisson</Title>
+      <Shortcut></Shortcut>
+      <Description>create blob and set permisson</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ref</ID>
+          <ToolTip>reference</ToolTip>
+          <Default>ref</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[let container = blobStorage.GetContainerReference("$ref$")
+container.CreateIfNotExist() |> ignore
+let mutable permissions = container.GetPermissions()
+permissions.PublicAccess <- BlobContainerPublicAccessType.Container
+container.SetPermissions(permissions)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>read delimiter file</Title>
+      <Shortcut></Shortcut>
+      <Description>read delimiter file</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>fileName</ID>
+          <ToolTip>fileName</ToolTip>
+          <Default>fileName</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>delimiter</ID>
+          <ToolTip>delimiter</ToolTip>
+          <Default>","</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <References>
+        <Reference>
+          <Assembly>Microsoft.VisualBasic.dll</Assembly>
+        </Reference>
+      </References>
+      <Code Language="fsharp"><![CDATA[let fileName = "$fileName$"
+use parser = new Microsoft.VisualBasic.FileIO.TextFieldParser(fileName)
+parser.Delimiters = [| $delimiter$ |]
+while (not parser.EndOfData) do
+    //Read in the fields for the current line
+    let fields = parser.ReadFields();
+    //Add code here to use data in fields variable.]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

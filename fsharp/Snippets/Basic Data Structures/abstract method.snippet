@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>abstract method</Title>
+      <Shortcut></Shortcut>
+      <Description>abstract method</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>funName</ID>
+          <ToolTip>function name</ToolTip>
+          <Default>MyFunction</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>funSignature</ID>
+          <ToolTip>function parameters</ToolTip>
+          <Default>int-&gt;int</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[abstract member $funName$ : $funSignature$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

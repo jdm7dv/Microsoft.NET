@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SQL connection type provider</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for auto implementation type provider SQL connection</Description>
+      <Author>Judith Wang</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>param1</ID>
+          <ToolTip>db schema name</ToolTip>
+          <Default>dbSchema</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>param2</ID>
+          <ToolTip>sql connection string</ToolTip>
+          <Default>Data Source=(LocalDB)\v11.0;Initial Catalog=tempdb;Integrated Security=True</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>param3</ID>
+          <ToolTip>db name</ToolTip>
+          <Default>db</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <References>
+        <Reference>
+          <Assembly>FSharp.Data.TypeProviders.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Data.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Data.Linq.dll</Assembly>
+        </Reference>
+      </References>
+      <Code Language="fsharp"><![CDATA[type $param1$ = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<ConnectionString = @"$param2$">
+let $param3$ = $param1$.GetDataContext()$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

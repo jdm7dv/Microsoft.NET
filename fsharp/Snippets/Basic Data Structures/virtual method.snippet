@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>virtual method</Title>
+      <Shortcut></Shortcut>
+      <Description>virtual method</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>funName</ID>
+          <ToolTip>function name</ToolTip>
+          <Default>MoveY</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[abstract member $funName$ : int->unit
+default this.$funName$(delta:int) = ()]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

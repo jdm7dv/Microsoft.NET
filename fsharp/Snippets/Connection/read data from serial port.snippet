@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>read data from serial port</Title>
+      <Shortcut></Shortcut>
+      <Description>read data from serial port</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>portName</ID>
+          <ToolTip>COM port name</ToolTip>
+          <Default>COM1</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let line = ref System.String.Empty
+seq {
+use comPort = new System.IO.Ports.SerialPort("$portName$")
+try
+    comPort.Open()
+    line := comPort.ReadLine()
+    while not (System.String.IsNullOrEmpty(!line)) do
+        yield line 
+        line := comPort.ReadLine()   
+finally
+    comPort.Close();
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

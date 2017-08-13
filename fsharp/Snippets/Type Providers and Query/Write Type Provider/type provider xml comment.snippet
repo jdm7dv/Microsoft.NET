@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>type provider xml comment</Title>
+      <Shortcut></Shortcut>
+      <Description>type provider xml comment</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>var</ID>
+          <ToolTip>variable name</ToolTip>
+          <Default>ctor</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>xml</ID>
+          <ToolTip>XML comment</ToolTip>
+          <Default>xml comment</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[$var$.AddXmlDocDelayed(fun () -> "$xml$")]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

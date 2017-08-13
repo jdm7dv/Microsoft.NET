@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>type provider provided method</Title>
+      <Shortcut></Shortcut>
+      <Description>type provider provided method</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>methodName</ID>
+          <ToolTip>method name</ToolTip>
+          <Default>methodName</Default>
+          <Function></Function>
+        </Literal>
+        <Object Editable="true">
+          <ID>parameters</ID>
+          <ToolTip>provided method parameters</ToolTip>
+          <Default>[]</Default>
+          <Function></Function>
+        </Object>
+        <Object Editable="true">
+          <ID>returnType</ID>
+          <ToolTip>provided type method return type</ToolTip>
+          <Default>typeof&lt;int&gt;</Default>
+          <Function></Function>
+        </Object>
+        <Object Editable="true">
+          <ID>invokeCode</ID>
+          <ToolTip>method invoke code</ToolTip>
+          <Default>&lt;@@ 1 + 1 @@&gt;</Default>
+          <Function></Function>
+        </Object>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[let m = ProvidedMethod(
+            methodName = "$methodName$",
+            parameters = $parameters$,
+            returnType = $returnType$,
+            IsStaticMethod = false,
+            InvokeCode = fun args -> 
+                $invokeCode$
+            )]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

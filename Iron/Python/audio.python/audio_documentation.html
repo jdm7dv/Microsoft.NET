@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Gestalt Audio Player Widget Documentation</title>
+<style type="text/css">
+.style1 {
+	font-size: large;
+	font-weight: bold;
+}
+.style2 {
+	font-family: "Courier New", Courier, monospace; font-size:small
+}
+</style>
+</head>
+
+<body>
+
+<p class="style1">Gestalt Audio Player Widget</p>
+<p>To use the Audio Widget you will need to have Silverlight installed. You can get Silverlight 
+at: <a href="http://www.silverlight.net">http://www.silverlight.net</a>.</p>
+<p>The Audio Gestalt Widget has been designed to support a simple mode where you 
+only only will need to add a reference to two JavaScript files plus some HTML5 
+audio 
+tag markup and you are good to go. To see an example of this this take a look at 
+the embed <a href="video_embed.html">sample</a></p>
+<p>If you would like to modify the user interface appearance you can change it in two ways:</p>
+<ol>
+<li>Simple adjustment of the basic colors can be done by modifying color values in the 
+source code:<br />
+<span class="style2">ButtonOffHexValue = “#ffbbbbbb” # color of buttons when mouse is not over</span><br class="style2" />
+<span class="style2">ButtonOverHexValue = “#ffeeeeee” # color of buttons when mouse is hovering</span><br class="style2" />
+<span class="style2">PanelBackgroundHexValue = “#44ffffff” # The control panel background color</span><br class="style2" />
+<span class="style2">TextColorHexValue = “#ff808080” # the color of the timecode and caption</span><br class="style2" />
+<span class="style2">MediaBackDropHexValue = “#ff000000” # the color of the overall media player 
+background</span><br /><br />
+
+
+<li>If you want to dramatically modify the <span class="caps">UI, you will need to 
+change the XAML that defines it in the added skin attribute of the audio tag</span>. 
+You can either manually do this in a 
+text editor, or you can load up the <span class="caps">original XAML</span> file 
+in Expression Blend 3. Just save the changes to a new file named &quot;newskin.xaml&quot; 
+that&#39;s in the same directory as the original file modify the &quot;skin&quot; attribute as 
+shown below, and refresh the browser to view the changes. Like so:<br/><br/>&lt;audio 
+id=&quot;audio1&quot;<br />
+..<br />
+skin=&quot;newskin.xaml&quot;&gt;<br />
+&lt;source src=&quot;path to file&quot;&gt;&lt;/source&gt;<br />
+&lt;/audio&gt; 	
+</ol>
+
+<p>There are two skins provided as examples: media.xaml and 
+media_alternative.xaml</p>
+<p><strong>Attributes supported by the Audio Widget:</strong></p>
+<ul>
+<li><strong>id</strong> [required] - the audio tag must have a unique id defined</li>
+<li><strong>autoplay</strong> - When set to true specifies that the media should play immediately. The default value is true</li>
+<li><strong>volume</strong> - A decimal value ranging between 0 and 1. The default value is .5</li>
+<li><strong>width</strong> - Defines the width of the player in pixels. The default value is 300</li>
+<li><strong>height</strong> - Defines the height of the player in pixels. The default value is 150.</li>
+<li><strong>loop</strong> - Specifies to repeat the content when done playing the file or set of files. The default value is false</li>
+<li><strong>skin</strong> - This is the XAML that will be loaded up for the player UI. The default value is media.xaml</li>
+</ul>
+
+
+</body>
+</html>

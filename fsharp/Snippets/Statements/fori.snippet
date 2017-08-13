@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>fori</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for for...in</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>param1</ID>
+          <ToolTip>pattern</ToolTip>
+          <Default>MyPattern</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>param2</ID>
+          <ToolTip>enumerable-expression</ToolTip>
+          <Default>MyEnumExpr</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[for $param1$ in $param2$ do 
+    $end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

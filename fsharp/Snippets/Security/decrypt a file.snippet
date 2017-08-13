@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>decrypt a file</Title>
+      <Shortcut></Shortcut>
+      <Description>decrypt a file</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>encryptedFile</ID>
+          <ToolTip>encrypted File</ToolTip>
+          <Default>encryptedFile</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[use fStream = System.IO.File.Open("$encryptedFile$", System.IO.FileMode.OpenOrCreate)
+let rijndaelAlg = System.Security.Cryptography.Rijndael.Create()
+
+use cStream = new System.Security.Cryptography.CryptoStream(fStream, rijndaelAlg.CreateDecryptor(rijndaelAlg.Key, rijndaelAlg.IV), System.Security.Cryptography.CryptoStreamMode.Read)
+use sReader = new System.IO.StreamReader(cStream)
+let plainText = sReader.ReadLine();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

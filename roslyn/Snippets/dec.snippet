@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>dec</Title>
+            <Shortcut>dec</Shortcut>
+            <Description>Code snippet for Interlocked.Decrement</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal Editable="false">
+                    <ID>SystemThreadingInterlocked</ID>
+                    <Function>SimpleTypeName(global::System.Threading.Interlocked)</Function>
+                </Literal>
+                <Literal>
+                    <ID>value</ID>
+                    <ToolTip>Value</ToolTip>
+                    <Default>value</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[$SystemThreadingInterlocked$.Decrement(ref $value$);$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

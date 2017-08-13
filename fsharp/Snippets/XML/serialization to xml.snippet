@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>deserialize xml to object</Title>
+      <Shortcut></Shortcut>
+      <Description>deserialize xml to object</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>TheClass</ID>
+          <ToolTip>class type to serialize</ToolTip>
+          <Default>TheClass</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>data</ID>
+          <ToolTip>data in xml file</ToolTip>
+          <Default>ClassData.xml</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <References>
+        <Reference>
+          <Assembly>System.Xml.dll</Assembly>
+        </Reference>
+      </References>
+      <Code Language="fsharp"><![CDATA[let reader = System.Xml.Serialization.XmlSerializer(typeof<$TheClass$>);
+use file = new System.IO.StreamReader(@"$data$")
+let fileData = reader.Deserialize(file) :?> $TheClass$
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

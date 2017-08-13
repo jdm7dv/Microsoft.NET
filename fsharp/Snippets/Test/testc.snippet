@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>testc</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for test class</Description>
+      <Author>Zack Zhou</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>param1</ID>
+          <ToolTip>class name</ToolTip>
+          <Default>MyTestClass</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[[<Microsoft.VisualStudio.TestTools.UnitTesting.TestClass>]
+type $param1$() = class
+    $selected$$end$
+end]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

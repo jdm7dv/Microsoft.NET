@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>write text to isolated storage</Title>
+      <Shortcut></Shortcut>
+      <Description>write text to isolated storage</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>fn</ID>
+          <ToolTip>text file</ToolTip>
+          <Default>TestStore.txt</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>str</ID>
+          <ToolTip>data to write</ToolTip>
+          <Default>Text to write to file.</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let isoStore = System.IO.IsolatedStorage.IsolatedStorageFile.GetMachineStoreForApplication()
+let isoStream = new System.IO.IsolatedStorage.IsolatedStorageFileStream(@"$fn$", System.IO.FileMode.Append, System.IO.FileAccess.Write, isoStore)
+
+use writer = new System.IO.StreamWriter(isoStream)
+writer.WriteLine("$str$")
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

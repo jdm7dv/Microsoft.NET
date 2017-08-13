@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>type provider skeleton</Title>
+      <Shortcut></Shortcut>
+      <Description>type provider skeleton</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>codeNS</ID>
+          <ToolTip>code namespace</ToolTip>
+          <Default>Samples.FSharp.ShareInfoProvider</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>tpClass</ID>
+          <ToolTip>type provider class name</ToolTip>
+          <Default>CheckedRegexProvider</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>tpNS</ID>
+          <ToolTip>type provider namespace</ToolTip>
+          <Default>Samples.ShareInfo.TPTest</Default>
+          <Function></Function>
+        </Literal>
+        <Object Editable="true">
+          <ID>baseType</ID>
+          <ToolTip>base type for the type provider</ToolTip>
+          <Default>obj</Default>
+          <Function></Function>
+        </Object>
+        <Literal Editable="true">
+          <ID>tpType</ID>
+          <ToolTip>type provider type</ToolTip>
+          <Default>TPTestType</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[namespace $codeNS$
+
+open System.Reflection
+open Microsoft.FSharp.Core.CompilerServices
+open Samples.FSharp.ProvidedTypes
+
+[<TypeProvider>]
+type public $tpClass$() as this =
+    inherit TypeProviderForNamespaces()
+    
+    // Get the assembly and namespace used to house the provided types
+    let thisAssembly = Assembly.GetExecutingAssembly()
+    let rootNamespace = "$tpNS$"
+    let baseTy = typeof<$baseType$>
+
+    let regexTy = ProvidedTypeDefinition(thisAssembly, rootNamespace, "$tpType$", Some baseTy)
+    
+    // add other property and method definition
+    
+    do this.AddNamespace(rootNamespace, [regexTy])
+
+[<TypeProviderAssembly>]
+do ()]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

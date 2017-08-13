@@ -1,0 +1,19 @@
+[
+    {
+        "Name": "NuGet3MinVersion",
+        "Description": "When using NuGet 3.x this package requires at least version {0}.",
+        "CommonTypes": [ ]
+    },
+    {
+        "Name": "Microsoft.Packaging.Tools.Trimming",
+        "Description": "Provides build infrastructure for trimming unused files from an application.",
+        "CommonTypes": [
+        ]
+    },
+    {
+        "Name": "NETStandard.Library",
+        "Description": "A set of standard .NET APIs that are prescribed to be used and supported together.",
+        "CommonTypes": [
+        ]
+    }
+]

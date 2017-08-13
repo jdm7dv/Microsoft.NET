@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tasks</Title>
+            <Shortcut>tasks</Shortcut>
+            <Description>Code snippet for starting a new task using a lambda expression.</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+                <SnippetType>SurroundsWith</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal Editable="false">
+                    <ID>SystemThreadingTasksTask</ID>
+                    <Function>SimpleTypeName(global::System.Threading.Tasks.Task)</Function>
+                </Literal>
+                <Literal>
+                    <ID>task</ID>
+                    <Default>task</Default>
+                    <ToolTip>Task instance</ToolTip>
+                </Literal>
+                <Literal>
+                    <ID>state</ID>
+                    <Default>state</Default>
+                    <ToolTip>Task state</ToolTip>
+                </Literal>
+                <Literal>
+                    <ID>value</ID>
+                    <Default>value</Default>
+                    <ToolTip>Task state value</ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp"><![CDATA[$SystemThreadingTasksTask$.Factory.StartNew(
+                ($state$) => 
+                { 
+                    $selected$$end$ 
+                }, 
+                $value$);]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

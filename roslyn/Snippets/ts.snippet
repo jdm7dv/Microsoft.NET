@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>ts</Title>
+			<Shortcut>ts</Shortcut>
+			<Description>Code snippet for using TransactionScope</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+                <Literal Editable="false">
+                    <ID>SystemTransactionsTransactionScope</ID>
+                    <Function>SimpleTypeName(global::System.Transactions.TransactionScope)</Function>
+                </Literal>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>name</ToolTip>
+					<Default>scope</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+                <![CDATA[using($SystemTransactionsTransactionScope$ $name$ = new $SystemTransactionsTransactionScope$())
+	{
+		$selected$$end$ 
+        
+        $name$.Complete();
+	}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

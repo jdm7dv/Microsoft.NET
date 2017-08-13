@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>process single file in zip file</Title>
+      <Shortcut></Shortcut>
+      <Description>process single file in zip file</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Reference>
+        <Reference>
+          <Assembly>System.IO.Compression.FileSystem.dll</Assembly>
+        </Reference>
+      </Reference>
+      <Reference>
+        <Reference>
+          <Assembly>System.IO.Compression.dll</Assembly>
+        </Reference>
+      </Reference>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>file</ID>
+          <ToolTip>zip file</ToolTip>
+          <Default>.\MyZip.zip</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>singleFile</ID>
+          <ToolTip>process file name</ToolTip>
+          <Default>file.txt</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[use archive = System.IO.Compression.ZipFile.OpenRead(@"$file$")
+archive.Entries
+|> Seq.filter (fun entry -> entry.Name="$singleFile$")
+|> Seq.iter (fun entry -> 
+        use stream = entry.Open()
+        //process stream
+        $end$() 
+        )]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

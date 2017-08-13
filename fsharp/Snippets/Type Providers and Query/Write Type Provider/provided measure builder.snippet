@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>provided measure builder</Title>
+      <Shortcut></Shortcut>
+      <Description>provided measure builder</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>unit</ID>
+          <ToolTip>unit name</ToolTip>
+          <Default>metre</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>type</ID>
+          <ToolTip>type of the unit</ToolTip>
+          <Default>float</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[let units = ProvidedMeasureBuilder.Default.SI "$unit$"  
+let unitType = ProvidedMeasureBuilder.Default.AnnotateType(typeof<$type$>, [units] )]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

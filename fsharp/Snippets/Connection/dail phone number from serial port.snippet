@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>dail phone number from serial port</Title>
+      <Shortcut></Shortcut>
+      <Description>dail phone number from serial port</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>portName</ID>
+          <ToolTip>COM port name</ToolTip>
+          <Default>COM1</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[use comPort = new System.IO.Ports.SerialPort("$portName$", 2400)
+comPort.DtrEnable <- true
+comPort.Write("ATDT 206-555-1000" + "\r\n")
+// All data transfer code goes here.]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

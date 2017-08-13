@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>principal</Title>
+            <Shortcut>principal</Shortcut>
+            <Description>Code snippet for principal</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>summary</ID>
+                    <ToolTip>Summary</ToolTip>
+                    <Default>Represents a users security context.</Default>
+                </Literal>
+                <Literal>
+                    <ID>access</ID>
+                    <ToolTip>Access modifier</ToolTip>
+                    <Default>public</Default>
+                </Literal>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>Name of your </ToolTip>
+                    <Default>My</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>SystemSecurityPrincipalIPrincipal</ID>
+                    <Function>SimpleTypeName(global::System.Security.Principal.IPrincipal)</Function>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>SystemSecurityPrincipalIIdentity</ID>
+                    <Function>SimpleTypeName(global::System.Security.Principal.IIdentity)</Function>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>Exception</ID>
+                    <Function>SimpleTypeName(global::System.NotImplementedException)</Function>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[/// <summary>
+/// $summary$
+/// </summary>
+$access$ class $name$Principal : $SystemSecurityPrincipalIPrincipal$
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:$name$Principal"/> class
+    /// </summary>
+    public $name$Principal() 
+    {
+    }
+    
+    /// <summary>
+    /// Gets the identity of the current principal.
+    /// </summary>
+    /// <value>The <see cref="T:System.Security.Principal.IIdentity"/> object associated with the current principal.</value>
+    public $SystemSecurityPrincipalIIdentity$ Identity
+    {
+        get 
+        { 
+            throw new NotImplementedException(); 
+        }
+    }
+
+    /// <summary>
+    /// Determines whether the current principal belongs to the specified role.
+    /// </summary>
+    /// <param name="role">The name of the role for which to check membership.</param>
+    /// <returns>
+    /// <c>true</c> if the current principal is a member of the specified role; otherwise, <c>false</c>.
+    /// </returns>
+    public bool IsInRole(string role)
+    {
+        throw new NotImplementedException();
+    }
+}]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

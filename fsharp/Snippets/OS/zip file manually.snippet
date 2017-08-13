@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>zip file manually</Title>
+      <Shortcut></Shortcut>
+      <Description>zip file manually</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Reference>
+        <Reference>
+          <Assembly>System.IO.Compression.FileSystem.dll</Assembly>
+        </Reference>
+      </Reference>
+      <Reference>
+        <Reference>
+          <Assembly>System.IO.Compression.dll</Assembly>
+        </Reference>
+      </Reference>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>dir</ID>
+          <ToolTip>directory to zip</ToolTip>
+          <Default>.\MyDir</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>zipFile</ID>
+          <ToolTip>zip file name</ToolTip>
+          <Default>.\myZipFile.zip</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>zipFolder</ID>
+          <ToolTip>zip folder name</ToolTip>
+          <Default>zipFolder</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[let files = System.IO.Directory.EnumerateFiles(@"$dir$")
+use zipFile = System.IO.Compression.ZipFile.Open(@"$zipFile$", System.IO.Compression.ZipArchiveMode.Create)
+files 
+|> Seq.iter (fun file -> 
+        let entryName = System.IO.Path.Combine("$zipFolder$", System.IO.Path.GetFileName(file))
+        zipFile.CreateEntry(entryName) |> ignore)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

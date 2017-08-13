@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>receive message from Azure Service Bus Queue</Title>
+      <Shortcut></Shortcut>
+      <Description>receive message from Azure Service Bus Queue</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>queueName</ID>
+          <ToolTip>queue name</ToolTip>
+          <Default>GAQueue</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>appName</ID>
+          <ToolTip>name in the app.config file</ToolTip>
+          <Default>Microsoft.ServiceBus.ConnectionString</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>propertyName</ID>
+          <ToolTip>property name</ToolTip>
+          <Default>propertyName</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[let QueueName = "$queueName$";
+let dp = QueueDescription(QueueName)
+let connectionString = CloudConfigurationManager.GetSetting("$appName$");
+let factory = MessagingFactory.CreateFromConnectionString(connectionString);
+
+let receiver = factory.CreateMessageReceiver(QueueName);
+let msg = receiver.Receive()
+msg.Complete();
+let r = msg.Properties.["$propertyName$"] 
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

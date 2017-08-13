@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>type provider provided property</Title>
+      <Shortcut></Shortcut>
+      <Description>type provider provided property</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>propName</ID>
+          <ToolTip>property name</ToolTip>
+          <Default>Property1</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>propType</ID>
+          <ToolTip>property type</ToolTip>
+          <Default>typeof&lt;string&gt;</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>getterCode</ID>
+          <ToolTip>getter code</ToolTip>
+          <Default>"Hello!"</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>setterCode</ID>
+          <ToolTip>setter code</ToolTip>
+          <Default>printfn "setter code"</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[let prop1 = ProvidedProperty(propertyName = "$propName$", 
+                             propertyType = $propType$, 
+                             IsStatic=false,
+                             GetterCode= (fun args -> <@@ $getterCode$ @@>),
+                             SetterCode = (fun args -> <@@ $setterCode$ @@>))]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

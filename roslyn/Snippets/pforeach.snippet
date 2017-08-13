@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>pforeach</Title>
+			<Shortcut>pforeach</Shortcut>
+			<Description>Code snippet for Parallel.ForEach</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+                <SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>Parallel</ID>
+					<Function>SimpleTypeName(global::System.Threading.Tasks.Parallel)</Function>
+				</Literal>
+                <Literal>
+                    <ID>source</ID>
+                    <ToolTip>An enumerable data source.</ToolTip>
+                    <Default>source</Default>
+                </Literal>
+                <Literal>
+                    <ID>item</ID>
+                    <ToolTip>The current item in the collection.</ToolTip>
+                    <Default>item</Default>
+                </Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[$Parallel$.ForEach($source$, $item$ => 
+			{
+				$selected$ $end$
+			});]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

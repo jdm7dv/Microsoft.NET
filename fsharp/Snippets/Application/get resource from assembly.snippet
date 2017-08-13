@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>get resource from assembly</Title>
+      <Shortcut></Shortcut>
+      <Description>get resource from assembly</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Code Language="fsharp"><![CDATA[let executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+let resources = executingAssembly.GetManifestResourceNames();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

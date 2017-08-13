@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>eventargs</Title>
+			<Shortcut>eventargs</Shortcut>
+			<Description>Code snippet for eventargs</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+                <Literal>
+                    <ID>access</ID>
+                    <ToolTip>Access modifier</ToolTip>
+                    <Default>public</Default>
+                </Literal>
+                <Literal>
+                    <ID>event</ID>
+                    <ToolTip>The event within which this class will be used.</ToolTip>
+                    <Default>ClassName.Event</Default>
+                </Literal>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Name of your </ToolTip>
+					<Default>My</Default>
+				</Literal>
+				<Literal>
+					<ID>base</ID>
+					<ToolTip>Base type</ToolTip>
+					<Function>SimpleTypeName(global::System.EventArgs)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>SystemSerializable</ID>
+					<Function>SimpleTypeName(global::System.Serializable)</Function>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+      <![CDATA[/// <summary>
+/// Provides data for the <see cref="E:$event$"/> event.
+/// </summary>
+[$SystemSerializable$]
+$access$ class $name$EventArgs : $base$
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:$name$EventArgs"/> class
+    /// </summary>
+    public $name$EventArgs() 
+    {
+    }
+}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

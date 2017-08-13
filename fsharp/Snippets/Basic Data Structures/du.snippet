@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>DU</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for Discriminated Unions</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>param1</ID>
+          <ToolTip>union name</ToolTip>
+          <Default>MyDU</Default>
+        </Literal>
+        <Literal>
+          <ID>param2</ID>
+          <ToolTip>Union case</ToolTip>
+          <Default>Case1</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[type $param1$ = 
+    | $param2$$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

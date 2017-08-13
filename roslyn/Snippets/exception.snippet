@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>exception</Title>
+			<Shortcut>exception</Shortcut>
+			<Description>Code snippet for exception</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+                <Literal>
+                    <ID>summary</ID>
+                    <ToolTip>Summary</ToolTip>
+                    <Default>Summary</Default>
+                </Literal>
+                <Literal>
+                    <ID>access</ID>
+                    <ToolTip>Access modifier</ToolTip>
+                    <Default>public</Default>
+                </Literal>
+				<Literal>
+					<ID>newException</ID>
+					<ToolTip>Name of your exception</ToolTip>
+					<Default>My</Default>
+				</Literal>
+				<Literal>
+					<ID>baseException</ID>
+					<ToolTip>Base type</ToolTip>
+					<Function>SimpleTypeName(global::System.Exception)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>SystemException</ID>
+					<Function>SimpleTypeName(global::System.Exception)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>SystemSerializable</ID>
+					<Function>SimpleTypeName(global::System.Serializable)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>SystemRuntimeSerializationSerializationInfo</ID>
+					<Function>SimpleTypeName(global::System.Runtime.Serialization.SerializationInfo)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>SystemRuntimeSerializationStreamingContext</ID>
+					<Function>SimpleTypeName(global::System.Runtime.Serialization.StreamingContext)</Function>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+      <![CDATA[/// <summary>
+/// $summary$
+/// </summary>
+[$SystemSerializable$]
+$access$ class $newException$Exception : $baseException$
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:$newException$Exception"/> class
+    /// </summary>
+    public $newException$Exception() 
+    {
+    }
+  
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:$newException$Exception"/> class
+    /// </summary>
+    /// <param name="message">A <see cref="T:System.String"/> that describes the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+    public $newException$Exception(string message) : base(message) 
+    {
+    }
+    
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:$newException$Exception"/> class
+    /// </summary>
+    /// <param name="message">A <see cref="T:System.String"/> that describes the error. The content of message is intended to be understood by humans. The caller of this constructor is required to ensure that this string has been localized for the current system culture.</param>
+    /// <param name="inner">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+    public $newException$Exception(string message, $SystemException$ inner) : base(message, inner) 
+    { 
+    }
+    
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:$newException$Exception"/> class
+    /// </summary>
+    /// <param name="info">The object that holds the serialized object data.</param>
+    /// <param name="context">The contextual information about the source or destination.</param>
+    protected $newException$Exception($SystemRuntimeSerializationSerializationInfo$ info, $SystemRuntimeSerializationStreamingContext$ context) : base(info, context) 
+    {
+    }
+}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

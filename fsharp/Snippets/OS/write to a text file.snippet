@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>write to a text file</Title>
+      <Shortcut></Shortcut>
+      <Description>write to a text file</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>content</ID>
+          <ToolTip>content</ToolTip>
+          <Default>my content</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>fn</ID>
+          <ToolTip>file name</ToolTip>
+          <Default>C:\test.txt</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[use sw = new System.IO.StreamWriter(@"$fn$", true)
+sw.WriteLine("$content$")]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

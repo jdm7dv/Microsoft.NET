@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>create registry key</Title>
+      <Shortcut></Shortcut>
+      <Description>create registry key</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>regKey</ID>
+          <ToolTip>registry key</ToolTip>
+          <Default>Software\CompanyName\ProductName</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let newKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(@"$regKey$")$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

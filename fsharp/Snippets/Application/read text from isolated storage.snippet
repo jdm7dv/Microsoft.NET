@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>read text from isolated storage</Title>
+      <Shortcut></Shortcut>
+      <Description>read text from isolated storage</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>fileName</ID>
+          <ToolTip>file name</ToolTip>
+          <Default>myfile.txt</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>var</ID>
+          <ToolTip>result string</ToolTip>
+          <Default>inputText</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[let isoStore = System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain()
+let isoStream = new System.IO.IsolatedStorage.IsolatedStorageFileStream(@"$fileName$", System.IO.FileMode.Open, isoStore)
+use reader = new System.IO.StreamReader(isoStream)
+let $var$ = reader.ReadToEnd()
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>fort</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for for...to</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>param1</ID>
+          <ToolTip>identifier</ToolTip>
+          <Default>MyIdentifier</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>param2</ID>
+          <ToolTip>start</ToolTip>
+          <Default>MyStart</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>param3</ID>
+          <ToolTip>end</ToolTip>
+          <Default>MyEnd</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[for $param1$ = $param2$ to $param3$ do 
+    $end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

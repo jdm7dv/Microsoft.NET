@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>try</Title>
+      <Shortcut></Shortcut>
+      <Description>Code snippet for try .. with</Description>
+      <Author>Andrew Xiao</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>param1</ID>
+          <ToolTip>exception type</ToolTip>
+          <Default>MyException</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp"><![CDATA[try
+    $end$
+with
+| :? $param1$ as ex -> ()]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

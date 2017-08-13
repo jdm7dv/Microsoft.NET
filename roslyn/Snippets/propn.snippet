@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>propn</Title>
+			<Shortcut>propn</Shortcut>
+			<Description>Code snippet for a property supporting INotifyPropertyChanged notification</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+                <Literal>
+                    <ID>access</ID>
+                    <ToolTip>Access modifier</ToolTip>
+                    <Default>public</Default>
+                </Literal>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Property type</ToolTip>
+					<Default>int</Default>
+				</Literal>
+				<Literal>
+					<ID>property</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+				<Literal>
+					<ID>field</ID>
+					<ToolTip>The variable backing this property</ToolTip>
+					<Default>field</Default>
+				</Literal>
+                <Literal>
+                    <ID>summary</ID>
+                    <ToolTip>Summary</ToolTip>
+                    <Default>summary</Default>
+                </Literal>
+			</Declarations>
+			<Code Language="csharp">
+                <![CDATA[/// <summary>
+/// Gets or sets the $summary$.
+/// </summary>
+/// <value>The $summary$.</value>
+$access$ $type$ $property$
+{
+	get 
+    { 
+        return this.$field$;
+    }
+    
+	set 
+    { 
+        if (value != this.$field$)
+        {
+            this.$field$ = value;
+
+            this.OnPropertyChanged("$property$");
+        }        
+    }
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

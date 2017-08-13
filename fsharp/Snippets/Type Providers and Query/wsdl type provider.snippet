@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>wsdl type provider</Title>
+      <Shortcut></Shortcut>
+      <Description>wsdl type provider</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>serviceUri</ID>
+          <ToolTip>service uri</ToolTip>
+          <Default>http://iservice.co.za/Twitter.asmx</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <References>
+        <Reference>
+          <Assembly>FSharp.Data.TypeProviders.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Runtime.Serialization.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.ServiceModel.dll</Assembly>
+        </Reference>
+      </References>
+      <Code Language="fsharp"><![CDATA[type service = Microsoft.FSharp.Data.TypeProviders.WsdlService<ServiceUri = "$serviceUri$">
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

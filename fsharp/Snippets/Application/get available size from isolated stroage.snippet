@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>get available size from isolated stroage.snippet</Title>
+      <Shortcut></Shortcut>
+      <Description>get available size from isolated stroage.snippet</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations></Declarations>
+      <Code Language="fsharp"><![CDATA[System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorage = System.IO.IsolatedStorage.IsolatedStorageFile.GetMachineStoreForAssembly();
+let spaceAvailable = isolatedStorage.Quota - isolatedStorage.UsedSize;]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

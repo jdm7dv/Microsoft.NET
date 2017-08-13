@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>OData type provider</Title>
+      <Shortcut></Shortcut>
+      <Description>OData type provider</Description>
+      <Author>Tao Liu</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>serviceUri</ID>
+          <ToolTip>service uri</ToolTip>
+          <Default>https://api.datamarket.azure.com/Esri/KeyUSDemographicsTrial/</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>liveID</ID>
+          <ToolTip>your live id</ToolTip>
+          <Default>&lt;your liveID&gt;</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>key</ID>
+          <ToolTip>azure market place key</ToolTip>
+          <Default>key</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <References>
+        <Reference>
+          <Assembly>FSharp.Data.TypeProviders.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Data.Services.Client.dll</Assembly>
+        </Reference>
+      </References>
+      <Code Language="fsharp"><![CDATA[// Consume demographics population and income OData service from Azure Marketplace. For more information, Please go to https://datamarket.azure.com/dataset/c7154924-7cab-47ac-97fb-7671376ff656
+type Demographics = Microsoft.FSharp.Data.TypeProviders.ODataService<ServiceUri = "$serviceUri$">
+let ctx = Demographics.GetDataContext()
+
+//To sign up for a Azure Marketplace account at https://datamarket.azure.com/account/info
+ctx.Credentials <- System.Net.NetworkCredential ("$liveID$", "$key$")
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

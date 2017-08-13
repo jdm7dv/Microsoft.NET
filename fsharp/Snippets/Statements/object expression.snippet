@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>object expression</Title>
+      <Shortcut></Shortcut>
+      <Description>object expression</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>var</ID>
+          <ToolTip>variable name</ToolTip>
+          <Default>a</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>interfaceName</ID>
+          <ToolTip>interface name</ToolTip>
+          <Default>IMyInterface</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>method</ID>
+          <ToolTip>method name</ToolTip>
+          <Default>F</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[let $var$ = { 
+            new $interfaceName$ with
+                member this.$method$($end$) = () 
+        }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

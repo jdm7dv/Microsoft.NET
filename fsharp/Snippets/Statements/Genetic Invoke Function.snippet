@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Genetic Invoke Function</Title>
+      <Shortcut></Shortcut>
+      <Description>Genetic Invoke Function</Description>
+      <Author>Tao Liu</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>funName</ID>
+          <ToolTip>function name</ToolTip>
+          <Default>feed</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>memberName</ID>
+          <ToolTip>member name</ToolTip>
+          <Default>Feed</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>sig</ID>
+          <ToolTip>member function signature</ToolTip>
+          <Default>unit -&gt; unit</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="fsharp" Kind=""><![CDATA[let inline $funName$ (x : ^T) = (^T : (member $memberName$ : $sig$) (x))$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
